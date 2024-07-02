@@ -8,4 +8,7 @@ easysoft/zentao:20.1.1
 nginx:1.27.0
 centos:centos7.9.2009
 alpine:3.9.5
+alpine:3.20.1
+ubuntu:jammy-20240627.1
+ubuntu:oracular-20240617
 sonatype/nexus3:3.69.0-java17
