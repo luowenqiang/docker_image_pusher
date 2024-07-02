@@ -6,7 +6,6 @@
 
 easysoft/zentao:20.1.1
 nginx:1.27.0
-sonatype/nexus:3.69.0-java17
 centos:centos7.9.2009
 alpine:3.9.5
-
+sonatype/nexus3:3.69.0-java17
