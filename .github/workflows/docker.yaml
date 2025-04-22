@@ -22,7 +22,6 @@ jobs:
       run: |
         echo $ALIYUN_REGISTRY
         echo ${ALIYUN_REGISTRY}
-        echo ${{ ALIYUN_REGISTRY }}
         echo ${{ env.ALIYUN_REGISTRY }}
     - name: Before freeing up disk space
       run: |
