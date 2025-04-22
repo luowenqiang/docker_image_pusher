@@ -9,7 +9,6 @@ while IFS= read -r line || [ -n "$line" ]; do
         continue
     fi
     
-    echo "镜像名称: $image"
-done < images.txt
+    echo "镜像名称: $line"
     
 done < images.txt
