@@ -6,8 +6,6 @@ on:
   pull_request:
     branches: [ "main" ]
 env:
-  TARGET_REGISTRY: "${{ secrets.TARGET_REGISTRY }}"
-  TARGET_NAMESPACE: "${{ secrets.TARGET_NAMESPACE }}"
   ALIYUN_REGISTRY_USER: "${{ secrets.USERNAME }}"
   ALIYUN_REGISTRY_PASSWORD: "${{ secrets.PASSWORD }}"
   env_var: ${{ vars.Docker }}
@@ -56,7 +54,7 @@ jobs:
 
     - name: Pull image
       run: |
-        docker login -u $ALIYUN_REGISTRY_USER -p $ALIYUN_REGISTRY_PASSWORD $TARGET_REGISTRY
+        docker login -u $ALIYUN_REGISTRY_USER -p $ALIYUN_REGISTRY_PASSWORD ${{ vars.TARGET_REGISTRY }}
         # declare -A duplicate_images
         # declare -A temp_map
         # docker pull "pinpointdocker/pinpoint-collector:3.0.1-metric"
