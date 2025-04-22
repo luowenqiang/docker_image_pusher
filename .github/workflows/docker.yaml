@@ -7,9 +7,10 @@ on:
 
 jobs:
 
-  build:
+  production:
     name: Pull
     runs-on: ubuntu-latest
+    environment: production
     steps:
     - name: Before freeing up disk space
       run: |
