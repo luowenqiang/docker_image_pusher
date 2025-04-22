@@ -1,5 +1,6 @@
 export
-docker login -u $ALIYUN_REGISTRY_USER -p $ALIYUN_REGISTRY_PASSWORD ${{ env.TARGET_REGISTRY }}
+echo "环境变量 $TARGET_REGISTRY"
+#docker login -u $ALIYUN_REGISTRY_USER -p $ALIYUN_REGISTRY_PASSWORD $TARGET_REGISTRY
 # 数据预处理,判断镜像是否重名
 declare -A duplicate_images
 declare -A temp_map
