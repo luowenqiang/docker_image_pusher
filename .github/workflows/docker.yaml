@@ -51,7 +51,7 @@ jobs:
 
     - name: Build and push images
       env:
-        USERNAME: ${{ secrets.USERNAME }}
+        USERNAME: "${{ secrets.USERNAME }}"
         PASSWORD: ${{ secrets.PASSWORD }}
         TARGET_REGISTRY: ${{ secrets.TARGET_REGISTRY }}
         TARGET_NAMESPACE: ${{ secrets.TARGET_NAMESPACE }}
