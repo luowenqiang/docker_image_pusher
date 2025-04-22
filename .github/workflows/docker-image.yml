@@ -6,8 +6,6 @@ on:
   pull_request:
     branches: [ "main" ]
 env:
-  ALIYUN_REGISTRY: "${{ env.TARGET_REGISTRY }}"
-  ALIYUN_NAME_SPACE: "${{ env.TARGET_NAMESPACE }}"
   ALIYUN_REGISTRY_USER: "${{ secrets.USERNAME }}"
   ALIYUN_REGISTRY_PASSWORD: "${{ secrets.PASSWORD }}"
 jobs:
@@ -56,8 +54,8 @@ jobs:
     - name: Pull image
       run: |
         export
-        echo "环境变量 ${{ env.ALIYUN_REGISTRY }}"
-        echo "环境变量 $ALIYUN_REGISTRY"
+        echo "环境变量 ${{ env.TARGET_REGISTRY }}"
+        echo "环境变量 $TARGET_REGISTRY"
         #docker login -u $ALIYUN_REGISTRY_USER -p $ALIYUN_REGISTRY_PASSWORD $TARGET_REGISTRY
         # 数据预处理,判断镜像是否重名
         declare -A duplicate_images
