@@ -6,8 +6,8 @@ on:
   pull_request:
     branches: [ "main" ]
 env:
-  ALIYUN_REGISTRY: "${{ TARGET_REGISTRY }}"
-  ALIYUN_NAME_SPACE: "${{ TARGET_NAMESPACE }}"
+  ALIYUN_REGISTRY: "${{ env.TARGET_REGISTRY }}"
+  ALIYUN_NAME_SPACE: "${{ env.TARGET_NAMESPACE }}"
   ALIYUN_REGISTRY_USER: "${{ secrets.USERNAME }}"
   ALIYUN_REGISTRY_PASSWORD: "${{ secrets.PASSWORD }}"
 jobs:
