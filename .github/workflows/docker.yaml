@@ -20,7 +20,7 @@ jobs:
     steps:
     - name: "输出变量"
       run: |
-        echo $ALIYUN_REGISTRY
+        echo ${{ env.ALIYUN_REGISTRY }}
     - name: Before freeing up disk space
       run: |
         echo "Before freeing up disk space"
