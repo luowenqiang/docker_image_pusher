@@ -51,7 +51,7 @@ jobs:
 
     - name: Build and push image Aliyun
       run: |
-        docker login -u ${{ secrets.USERNAME }} -p ${{ secrets.PASSWORD }} ${{ secrets.TARGET_REGISTRY }}
+        echo docker login -u ${{ secrets.USERNAME }} -p ${{ secrets.PASSWORD }} ${{ secrets.TARGET_REGISTRY }}
         # 数据预处理,判断镜像是否重名
         declare -A duplicate_images
         declare -A temp_map
