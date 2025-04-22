@@ -55,11 +55,6 @@ jobs:
     - name: Pull image
       run: |
         docker login -u $ALIYUN_REGISTRY_USER -p $ALIYUN_REGISTRY_PASSWORD ${{ vars.TARGET_REGISTRY }}
-        # declare -A duplicate_images
-        # declare -A temp_map
-        # docker pull "pinpointdocker/pinpoint-collector:3.0.1-metric"
-        # docker tag "pinpointdocker/pinpoint-collector:3.0.1-metric" ${{ vars.TARGET_REGISTRY }}/${{ vars.TARGET_NAMESPACE }}/pinpointdocker/pinpoint-collector:3.0.1-metric
-        # docker push ${{ vars.TARGET_REGISTRY }}/${{ vars.TARGET_NAMESPACE }}/pinpointdocker/pinpoint-collector:3.0.1-metric
         while IFS= read -r line || [ -n "$line" ]; do
             # 忽略空行与注释
             [[ -z "$line" ]] && continue
@@ -70,7 +65,7 @@ jobs:
             echo "镜像名称: $line"
             docker pull "$line"
             docker tag "$line" "${{ vars.TARGET_REGISTRY }}/${{ vars.TARGET_NAMESPACE }}/$line"
-            docker push ${{ vars.TARGET_REGISTRY }}/${{ vars.TARGET_NAMESPACE }}/$line"
+            docker push "${{ vars.TARGET_REGISTRY }}/${{ vars.TARGET_NAMESPACE }}/$line"
             
         done < images.txt
 
