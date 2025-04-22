@@ -4,17 +4,19 @@ on:
   workflow_dispatch:
   push:
     branches: [ main ]
+
+
 env:
-  USERNAME: "${{ secrets.USERNAME }}"
-  PASSWORD: ${{ secrets.PASSWORD }}
-  TARGET_REGISTRY: ${{ secrets.TARGET_REGISTRY }}
-  TARGET_NAMESPACE: ${{ secrets.TARGET_NAMESPACE }}
+  ALIYUN_REGISTRY: "${{ secrets.TARGET_REGISTRY }}"
+  ALIYUN_NAME_SPACE: "${{ secrets.TARGET_NAMESPACE }}"
+  ALIYUN_REGISTRY_USER: "${{ secrets.USERNAME }}"
+  ALIYUN_REGISTRY_PASSWORD: "${{ secrets.PASSWORD }}"
+
 jobs:
 
-  production:
+  build:
     name: Pull
     runs-on: ubuntu-latest
-    environment: production
     steps:
     - name: Before freeing up disk space
       run: |
@@ -53,10 +55,9 @@ jobs:
     - name: Docker Setup Buildx
       uses: docker/setup-buildx-action@v3
 
-    - name: Build and push images
+    - name: Build and push image Aliyun
       run: |
-        echo docker login -u ${{ env.USERNAME }} -p ${{ env.PASSWORD }} ${{ env.TARGET_REGISTRY }}
-        docker login -u ${{ env.USERNAME }} -p ${{ env.PASSWORD }} ${{ env.TARGET_REGISTRY }}
+        docker login -u $ALIYUN_REGISTRY_USER -p $ALIYUN_REGISTRY_PASSWORD $ALIYUN_REGISTRY
         # 数据预处理,判断镜像是否重名
         declare -A duplicate_images
         declare -A temp_map
@@ -137,7 +138,7 @@ jobs:
             
             # 将@sha256:等字符删除
             image_name_tag="${image_name_tag%%@*}"
-            new_image="${{ env.TARGET_REGISTRY }}/${{ env.TARGET_NAMESPACE }}/$platform_prefix$name_space_prefix$image_name_tag"
+            new_image="$ALIYUN_REGISTRY/$ALIYUN_NAME_SPACE/$platform_prefix$name_space_prefix$image_name_tag"
             echo "docker tag $image $new_image"
             docker tag $image $new_image
             echo "docker push $new_image"
