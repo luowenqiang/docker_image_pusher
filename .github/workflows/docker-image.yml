@@ -6,6 +6,8 @@ on:
   pull_request:
     branches: [ "main" ]
 env:
+  TARGET_REGISTRY: "${{ secrets.TARGET_REGISTRY }}"
+  TARGET_NAMESPACE: "${{ secrets.TARGET_NAMESPACE }}"
   ALIYUN_REGISTRY_USER: "${{ secrets.USERNAME }}"
   ALIYUN_REGISTRY_PASSWORD: "${{ secrets.PASSWORD }}"
 jobs:
