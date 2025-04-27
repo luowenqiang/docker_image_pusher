@@ -1,3 +1,6 @@
+confluentinc/cp-kafka:7.4.0
+harisekhon/hbase:2
+apachepinot/pinot:1.1.0
 pinpointdocker/pinpoint-collector:3.0.1-metric
 pinpointdocker/pinpoint-web:3.0.1-metric
 pinpointdocker/pinpoint-batch:3.0.1
