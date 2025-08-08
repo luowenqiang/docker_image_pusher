@@ -1,3 +1,4 @@
+apachepinot/pinot:1.3.0-11-amazoncorretto
 ambassador/ambassador-agent:1.0.21
 datawire/ambassador-telepresence-manager:2.19.5
 rabbitmq:3.7.17-management
