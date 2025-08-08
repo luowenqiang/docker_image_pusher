@@ -4,7 +4,6 @@ rabbitmq:3.7.17-management
 redis:7
 canal/canal-server:v1.1.8
 confluentinc/cp-kafka:7.4.9
-harisekhon/hbase:2
 apachepinot/pinot:1.1.0
 pinpointdocker/pinpoint-collector:3.0.3-metric
 pinpointdocker/pinpoint-web:3.0.3-metric
