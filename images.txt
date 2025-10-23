@@ -1,3 +1,4 @@
+redis:7.4.6
 apachepinot/pinot:1.4.0-21-amazoncorretto
 pinpointdocker/pinpoint-collector:3.0.3-metric
 pinpointdocker/pinpoint-web:3.0.3-metric
