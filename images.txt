@@ -1,3 +1,11 @@
+apachepinot/pinot:1.4.0-21-amazoncorretto
+pinpointdocker/pinpoint-collector:3.0.3-metric
+pinpointdocker/pinpoint-web:3.0.3-metric
+pinpointdocker/pinpoint-batch:3.0.3
+pinpointdocker/pinpoint-collector:3.0.3
+pinpointdocker/pinpoint-flink:3.0.3
+pinpointdocker/pinpoint-hbase:3.0.3
+pinpointdocker/pinpoint-web:3.0.3
 python:3.9.23-trixie
 apachepinot/pinot:1.3.0-11-amazoncorretto
 mysql:8.4.6
