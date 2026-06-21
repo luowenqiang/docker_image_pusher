@@ -6,8 +6,8 @@ on:
   pull_request:
     branches: [ "main" ]
 env:
-  ALIYUN_REGISTRY_USER: "${{ secrets.USERNAME }}"
-  ALIYUN_REGISTRY_PASSWORD: "${{ secrets.PASSWORD }}"
+  USERNAME: "${{ secrets.USERNAME }}"
+  PASSWORD: "${{ secrets.PASSWORD }}"
   env_var: ${{ vars.Docker }}
 jobs:
 
@@ -54,7 +54,7 @@ jobs:
 
     - name: Pull image
       run: |
-        docker login -u $ALIYUN_REGISTRY_USER -p $ALIYUN_REGISTRY_PASSWORD ${{ vars.TARGET_REGISTRY }}
+        docker login -u $USERNAME -p $PASSWORD ${{ vars.TARGET_REGISTRY }}
         while IFS= read -r line || [ -n "$line" ]; do
             # 忽略空行与注释
             [[ -z "$line" ]] && continue
