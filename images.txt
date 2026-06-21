@@ -1,3 +1,4 @@
+tailscale/tailscale:latest
 luowenqiang/ai-coding-tools:latest
 redis:7.4.6
 apachepinot/pinot:1.4.0-21-amazoncorretto
