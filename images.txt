@@ -1,3 +1,4 @@
+gitlab/gitlab-ce:18.11.6-ce.0
 luowenqiang/ai-coding-tools:latest
 tailscale/tailscale:latest
 redis:7.4.6
